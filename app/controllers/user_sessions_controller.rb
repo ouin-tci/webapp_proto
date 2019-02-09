@@ -6,19 +6,18 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    Rails.logger.debug(">>>>>>> #{user_params[:email]} #{user_params[:password]}")
-    @user = login(user_params[:email], user_params[:password])
+     @user = login(user_params[:email], user_params[:password])
     if @user
       redirect_back_or_to(users_path)
     else
-      redirect_to login_path,  :alert => "Wrong Email or password"
+      redirect_to login_path,  flash: {:error => 'Wrong email or password!'}
     end
 
   end
 
   def destroy
     logout
-    redirect_to(users_path)
+    redirect_to(login_path)
   end
 
 private

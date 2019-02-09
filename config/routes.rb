@@ -6,5 +6,8 @@ Rails.application.routes.draw do
   post 'auth' => 'user_sessions#create', :as => :auth
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
+  get 'users/password/new' => 'users#password_new'
+  post 'users/password/change_request' => 'users#password_change_request'
+
   root :to => 'user_sessions#new'
 end

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_login, only: [:password_new, :password_change_request]
 
   # GET /users
   # GET /users.json
@@ -59,6 +60,22 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def password_new
+    @user = User.new
+  end
+
+  def password_change_request
+    if user_params[:email].present?
+      @user = User.where(:email => user_params[:email])
+      if @user.length == 1
+        Rails.logger.debug(">>>>> send reset email")
+      else
+        Rails.logger.debug(">>>>> do nothing")
+      end
+    end
+    redirect_to login_path,  flash: {:success => 'If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.'}
   end
 
   private

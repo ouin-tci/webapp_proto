@@ -20,6 +20,8 @@ Things you may want to cover:
     - rails db:migrate
 
 * How to run the test suite
+    - bundle install
+    - rails s
 
 * Services (job queues, cache servers, search engines, etc.)
 
