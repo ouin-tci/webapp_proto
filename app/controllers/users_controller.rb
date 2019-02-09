@@ -68,14 +68,15 @@ class UsersController < ApplicationController
 
   def password_change_request
     if user_params[:email].present?
-      @user = User.where(:email => user_params[:email])
-      if @user.length == 1
+      @user = User.find_by_email(user_params[:email])
+      if @user
         Rails.logger.debug(">>>>> send reset email")
+        @user.deliver_reset_password_instructions!
       else
         Rails.logger.debug(">>>>> do nothing")
       end
     end
-    redirect_to login_path,  flash: {:success => 'If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.'}
+    redirect_to root_path,  flash: {:success => 'If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.'}
   end
 
   private
