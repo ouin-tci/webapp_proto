@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'logout' => 'user_sessions#destroy', :as => :logout
 
   get 'users/password/new' => 'users#password_new'
-  post 'users/password/change_request' => 'users#password_change_request'
+  post 'users/password/reset' => 'users#password_reset'
 
   root :to => 'user_sessions#new'
 end

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  skip_before_action :require_login, only: [:password_new, :password_change_request]
+  skip_before_action :require_login, only: [:password_new, :password_reset]
 
   # GET /users
   # GET /users.json
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def password_change_request
+  def password_reset
     if user_params[:email].present?
       @user = User.find_by_email(user_params[:email])
       if @user
