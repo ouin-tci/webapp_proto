@@ -1,0 +1,41 @@
+<div class="page-header">
+  <%= link_to registrations_path, class: 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_registration_path(@registration), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Show registration</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Email:</dt>
+  <dd><%= @registration.email %></dd>
+
+  <dt>Token:</dt>
+  <dd><%= @registration.token %></dd>
+
+  <dt>Expired date:</dt>
+  <dd><%= @registration.expired_date %></dd>
+
+  <dt>Operator confirmed:</dt>
+  <dd><%= @registration.operator_confirmed %></dd>
+
+  <dt>Vaild:</dt>
+  <dd><%= @registration.vaild %></dd>
+
+  <dt>Customer type:</dt>
+  <dd><%= @registration.customer_type %></dd>
+
+  <dt>Email send at:</dt>
+  <dd><%= @registration.email_send_at %></dd>
+
+  <dt>Create by:</dt>
+  <dd><%= @registration.create_by %></dd>
+
+  <dt>Updated by:</dt>
+  <dd><%= @registration.updated_by %></dd>
+
+</dl>
