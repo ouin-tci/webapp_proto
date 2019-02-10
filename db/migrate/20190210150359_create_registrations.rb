@@ -12,6 +12,8 @@ class CreateRegistrations < ActiveRecord::Migration[5.2]
       t.integer :updated_by
 
       t.timestamps
+      
     end
+    add_index :registrations, :token
   end
 end

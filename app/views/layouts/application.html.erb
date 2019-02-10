@@ -37,6 +37,10 @@
 
           <% if current_user %>
             <li>
+            <%= link_to "Registration", registrations_path, method: :get %>
+            </li>
+
+            <li>
             <%= link_to "Edit Password", edit_user_path(current_user.id) %>
             </li>
             <li>
