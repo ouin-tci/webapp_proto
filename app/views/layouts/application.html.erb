@@ -44,6 +44,9 @@
             <%= link_to "Edit Password", edit_user_path(current_user.id) %>
             </li>
             <li>
+            <%= link_to "File Upload", comments_path %>
+            </li>
+            <li>
             <%= link_to "Logout", :logout, method: :post %>
             </li>
           <% else %>
