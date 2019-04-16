@@ -20,13 +20,16 @@ Things you may want to cover:
     - rails db:migrate
 
 * How to run the test suite
-    - export MAIL_ACCOUNT="your gmail account"
-    - export MAIL_ACCOUNT_PWD="you gmail account password"
+    - se ENV
+    ```Shell
+    export MAIL_ACCOUNT="your gmail account"
+    export MAIL_ACCOUNT_PWD="you gmail account password"
+    ```
     - https://myaccount.google.com/lesssecureapps
         - 安全性の低いアプリの許可: 有効
-    - bundle install
-    - db migrate
+    - prepare
     ```Shell
+    bundle install
     rails db:migrate
     ```
     - add first user
