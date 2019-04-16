@@ -25,7 +25,11 @@ Things you may want to cover:
     - https://myaccount.google.com/lesssecureapps
         - 安全性の低いアプリの許可: 有効
     - bundle install
-    - rails s
+    - rails c
+    - 
+    ``` User.create({:email=> 'ou.yun1@tci-cn.co.jp', :password=>'password', :created_by=>1, :updated_by=>1, :created_at=>DateTime.now, :updated_at=>DateTime.now, :password_confirmation=>'password'})
+    
+    ```
 
 * Services (job queues, cache servers, search engines, etc.)
 
