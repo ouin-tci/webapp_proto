@@ -25,10 +25,24 @@ Things you may want to cover:
     - https://myaccount.google.com/lesssecureapps
         - 安全性の低いアプリの許可: 有効
     - bundle install
-    - rails c
-    - 
-    ``` User.create({:email=> 'ou.yun1@tci-cn.co.jp', :password=>'password', :created_by=>1, :updated_by=>1, :created_at=>DateTime.now, :updated_at=>DateTime.now, :password_confirmation=>'password'})
+    - db migrate
+    ```Shell
+    rails db:migrate
+    ```
+    - add first user
+    ```Shell
+    rails c
+    ```
+    ```Ruby
+    User.create({:email=> 'youname@domain', :password=>'password', :created_by=>1, :updated_by=>1, :created_at=>DateTime.now, :updated_at=>DateTime.now, :password_confirmation=>'password'})
     
+    #exit
+    exit
+    
+    ```
+    - start up server 
+    ```Shell
+    rails s
     ```
 
 * Services (job queues, cache servers, search engines, etc.)
