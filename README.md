@@ -20,7 +20,7 @@ Things you may want to cover:
     - rails db:migrate
 
 * How to run the test suite
-    - se ENV
+    - setup ENV
     ```Shell
     export MAIL_ACCOUNT="your gmail account"
     export MAIL_ACCOUNT_PWD="you gmail account password"
@@ -32,7 +32,7 @@ Things you may want to cover:
     bundle install
     rails db:migrate
     ```
-    - add first user
+    - add first user via rails console
     ```Shell
     rails c
     ```
